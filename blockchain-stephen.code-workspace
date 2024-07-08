@@ -9,5 +9,7 @@
 			"name": "Blockchain Stephen"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"solidity.compileUsingRemoteVersion": "v0.4.17+commit.bdeb9e52"
+	}
 }
