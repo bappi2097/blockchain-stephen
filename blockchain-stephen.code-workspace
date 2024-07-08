@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "./inbox",
+			"name": "Inbox"
+		},
+		{
+			"path": ".",
+			"name": "Blockchain Stephen"
+		}
+	],
+	"settings": {}
+}
