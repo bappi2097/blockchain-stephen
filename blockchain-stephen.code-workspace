@@ -5,6 +5,10 @@
 			"name": "Lottery"
 		},
 		{
+			"path": "./lottery-react",
+			"name": "Lottery React"
+		},
+		{
 			"path": "./inbox",
 			"name": "Inbox"
 		},
