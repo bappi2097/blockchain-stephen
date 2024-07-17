@@ -40,19 +40,23 @@ contract Campaign {
     }
 
     function contribute() public payable {
-        require(msg.value > minimumContribution);
+        require(msg.value >= minimumContribution);
 
         approvers[msg.sender] = true;
         approversCount++;
     }
 
-    function createRequest(string description, uint value, address recipient) public restricted {
+    function createRequest(
+        string description,
+        uint value,
+        address recipient
+    ) public restricted {
         Request memory newRequest = Request({
-           description: description,
-           value: value,
-           recipient: recipient,
-           complete: false,
-           approvalCount: 0
+            description: description,
+            value: value,
+            recipient: recipient,
+            complete: false,
+            approvalCount: 0
         });
 
         requests.push(newRequest);

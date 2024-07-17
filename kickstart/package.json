@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile": "node ethereum/compile",
+    "test": "mocha"
   },
-  "author": "",
+  "author": "Bappi Saha",
   "license": "ISC",
   "dependencies": {
     "@truffle/hdwallet-provider": "^2.1.15",
