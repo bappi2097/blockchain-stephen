@@ -1,26 +1,14 @@
-"use client"
-import useFactory from "../ethereum/factory";
-import { useEffect, useState } from "react";
 
-export default function Home() {
-  const factory = useFactory()
-  const [campaigns, setCampaigns] = useState()
-  const fetchCampaigns = async () => {
-    const response = await factory.methods.getDeployedCampaigns().call()
-    setCampaigns(response)
-  }
+import getFactory from "../ethereum/factory";
 
-  useEffect(() => {
-    if (factory) {
-      fetchCampaigns()
-    }
-  }, [factory])
+export default async function Home() {
+  const factory = getFactory()
 
-  console.log(campaigns)
+  const campaigns = await factory.methods.getDeployedCampaigns().call()
 
   return (
     <div>
-      Campaign list
+      {campaigns?.map((campaign) => (<div key={campaign}>{campaign}</div>))}
     </div>
   );
 }
