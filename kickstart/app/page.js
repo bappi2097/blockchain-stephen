@@ -11,13 +11,13 @@ export default function Home() {
   }
 
   useEffect(() => {
-    if(factory){
+    if (factory) {
       fetchCampaigns()
     }
   }, [factory])
 
   console.log(campaigns)
-  
+
   return (
     <div>
       Campaign list

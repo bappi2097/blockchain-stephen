@@ -3,7 +3,7 @@ const HDWalletProvider = require('@truffle/hdwallet-provider');
 const { Web3 } = require('web3');
 const { interface, bytecode } = require('./build/CampaignFactory.json');
 
-const provider = new HDWalletProvider(process.env.MNEMONIC_KEY, process.env.NETWORK_URL);
+const provider = new HDWalletProvider(process.env.MNEMONIC_KEY, process.env.NEXT_PUBLIC_NETWORK_URL);
 
 const web3 = new Web3(provider);
 
