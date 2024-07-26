@@ -1,14 +1,15 @@
-import { Container } from "semantic-ui-react";
-import getFactory from "../ethereum/factory";
-import CampaignSection from "@/components/Campaign";
+import factory from "../ethereum/factory";
+import CampaignSection from "@/components/CampaignSection";
 
 export default async function Home() {
-  const factory = getFactory()
   const campaigns = await factory.methods.getDeployedCampaigns().call()
 
   return (
     <>
-      <CampaignSection items={campaigns} />
+      <h3 className="text-2xl my-2">Open Campaigns</h3>
+      <div className="flex gap-2">
+        <CampaignSection items={campaigns} />
+      </div>
     </>
   );
 }
