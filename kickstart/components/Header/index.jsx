@@ -1,37 +1,28 @@
 "use client";
-import { MenuMenu, MenuItem, Menu } from "semantic-ui-react"
-import { usePathname } from 'next/navigation'
+import { Menu } from "semantic-ui-react"
+import { useRouter } from "next/navigation";
 
 const Header = () => {
-    const pathname = usePathname()
-    const handleItemClick = () => { }
+    const router = useRouter()
     return (
         <Menu>
-            <MenuItem
-                name='browse'
-                active={pathname === "/"}
-                onClick={handleItemClick}
-            >
-                Browse
-            </MenuItem>
+            <Menu.Item link >
+                CrowdCoin
+            </Menu.Item>
 
-            <MenuMenu position='right'>
-                <MenuItem
-                    name='signup'
-                    active={pathname === "signup"}
-                    onClick={handleItemClick}
-                >
-                    Sign Up
-                </MenuItem>
+            <Menu.Menu position='right'>
+                <Menu.Item onClick={() => {
+                    router.push("/campaigns")
+                }}>
+                    Campaigns
+                </Menu.Item>
 
-                <MenuItem
-                    name='help'
-                    active={pathname === "help"}
-                    onClick={handleItemClick}
-                >
-                    Help
-                </MenuItem>
-            </MenuMenu>
+                <Menu.Item onClick={() => {
+                    router.push("/campaigns/new")
+                }}>
+                    +
+                </Menu.Item>
+            </Menu.Menu>
         </Menu>
     )
 }

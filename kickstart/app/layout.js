@@ -1,6 +1,7 @@
 import 'semantic-ui-css/semantic.min.css';
 import "./globals.css";
 import Header from '@/components/Header';
+import { Container } from 'semantic-ui-react';
 
 export const metadata = {
   title: "Create Next App",
@@ -12,7 +13,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <Header />
-        {children}
+        <Container>
+          {children}
+        </Container>
       </body>
     </html>
   );
