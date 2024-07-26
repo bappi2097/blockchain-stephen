@@ -1,4 +1,5 @@
 "use client"
+import Link from "next/link"
 import { Card } from "semantic-ui-react"
 
 const Campaigns = ({ items }) => {
@@ -10,7 +11,7 @@ const Campaigns = ({ items }) => {
             <Card.Content>
               <Card.Header className='break-words'>{item}</Card.Header>
               <Card.Description>
-                <a href='#'>View Campaign</a>
+                <Link href={`/campaigns/${item}`}>View Campaign</Link>
               </Card.Description>
             </Card.Content>
           </Card>

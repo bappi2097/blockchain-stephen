@@ -1,6 +1,7 @@
 "use client"
 import factory from "@/ethereum/factory"
 import web3 from "@/ethereum/web3"
+import { link } from "@/utils"
 import React, { useState } from "react"
 import { Button, Form, Input, Message } from "semantic-ui-react"
 
@@ -9,6 +10,8 @@ export default function CreateCampaignForm() {
   const [errorField, setErrorField] = useState()
   const [error, setError] = useState()
   const [loading, setLoading] = useState(false)
+  const route = link("/")
+
   const handleSubmit = async (e) => {
     e.preventDefault()
     setLoading(true)
@@ -28,6 +31,7 @@ export default function CreateCampaignForm() {
       await factory.methods.createCampaign(minimumContribution).send({
         from: accounts[0],
       })
+      route()
     } catch (error) {
       setError(error.message)
     }

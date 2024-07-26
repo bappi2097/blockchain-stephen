@@ -6,7 +6,9 @@ const Header = () => {
   const pathname = getPathName()
   return (
     <Menu>
-      <Menu.Item onClick={link("/")}>CrowdCoin</Menu.Item>
+      <Menu.Item onClick={link("/")}>
+        <span className='font-bold text-xl font-mono'>CrowdCoin</span>
+      </Menu.Item>
 
       <Menu.Menu position='right'>
         <Menu.Item
