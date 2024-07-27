@@ -9,7 +9,7 @@ export default async function CampaignPage({ params }) {
         <>
             <h3 className="text-xl font-bold mb-2">Campaign Details</h3>
             <div className="grid grid-cols-1 md:grid-cols-[1fr_250px] gap-4 justify-between">
-                <CampaignDetails summary={summary} />
+                <CampaignDetails summary={summary} address={params.address} />
                 <ContributeForm address={params.address} />
             </div>
         </>

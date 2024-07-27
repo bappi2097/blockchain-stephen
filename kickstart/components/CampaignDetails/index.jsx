@@ -1,9 +1,10 @@
 "use client"
 import web3 from '@/ethereum/web3';
+import { link } from '@/utils';
 import React from 'react'
-import { Card } from 'semantic-ui-react';
+import { Button, Card } from 'semantic-ui-react';
 
-const CampaignDetails = ({ summary }) => {
+const CampaignDetails = ({ summary, address }) => {
     const items = [
         {
             header: summary.manager,
@@ -36,7 +37,14 @@ const CampaignDetails = ({ summary }) => {
             style: { overflowWrap: "break-word" }
         },
     ]
-    return <Card.Group items={items} />
+    return (
+        <div>
+            <Card.Group items={items} />
+            <div className='mt-4'>
+                <Button primary onClick={link(`/campaigns/${address}/requests`)}>View Requests</Button>
+            </div>
+        </div>
+    )
 
 }
 
