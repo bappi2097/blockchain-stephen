@@ -17,10 +17,16 @@ export async function getAllRequestsByAddress(address) {
     const campaignInstance = getCampaignInstance(address);
     const requestsCount = await campaignInstance.methods.getRequestsCount().call();
     const approversCount = await campaignInstance.methods.approversCount().call();
-    const requests = await Promise.all(
-        Array(requestsCount).fill().map((_, index) => (
-            campaignInstance.methods.requests(index).call())
+    let requests = []
+    try {
+        requests = await Promise.all(
+            Array(requestsCount).fill().map((_, index) => (
+                campaignInstance.methods.requests(index).call())
+            )
         )
-    )
+
+    } catch (error) {
+        // console.log(error)
+    }
     return { requests, requestsCount, address, approversCount }
 }

@@ -40,10 +40,12 @@ const RequestRow = ({ request, index, address, approversCount }) => {
         setLoading((prev) => ({ ...prev, finalize: false }))
     }
 
-    const rowColor = (parseInt(request.approvalCount) >= parseInt(approversCount) / 2) && !request.complete ? 'bg-yellow-200' : ''
+    const readyToFinalize = (parseInt(request.approvalCount) > parseInt(approversCount) / 2);
+
+    const rowColor = readyToFinalize && !request.complete ? 'bg-yellow-200' : ''
 
     return (
-        <Row className={`${rowColor}`} disabled={request.complete}>
+        <Row className={rowColor} disabled={request.complete} positive={readyToFinalize}>
             <Cell>{index + 1}</Cell>
             <Cell>{request.description}</Cell>
             <Cell>{web3.utils.fromWei(request.value, "ether")}</Cell>

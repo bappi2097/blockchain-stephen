@@ -1,30 +1,30 @@
 {
-	"folders": [
-		{
-			"path": "./kickstart",
-			"name": "Kickstart"
-		},
-		{
-			"path": "./lottery",
-			"name": "Lottery"
-		},
-		{
-			"path": "./lottery-react",
-			"name": "Lottery React"
-		},
-		{
-			"path": "./inbox",
-			"name": "Inbox"
-		},
-		{
-			"path": ".",
-			"name": "Blockchain Stephen"
-		}
-	],
-	"settings": {
-		"solidity.compileUsingRemoteVersion": "v0.4.17+commit.bdeb9e52",
-		"files.autoSave": "onWindowChange",
-		"editor.defaultFormatter": "esbenp.prettier-vscode",
-		"editor.formatOnSave": true
-	}
+  "folders": [
+    {
+      "path": "./kickstart",
+      "name": "Crowd Coin"
+    },
+    {
+      "path": "./lottery",
+      "name": "Lottery"
+    },
+    {
+      "path": "./lottery-react",
+      "name": "Lottery React"
+    },
+    {
+      "path": "./inbox",
+      "name": "Inbox"
+    },
+    {
+      "path": ".",
+      "name": "Blockchain Stephen"
+    }
+  ],
+  "settings": {
+    "solidity.compileUsingRemoteVersion": "v0.4.17+commit.bdeb9e52",
+    "files.autoSave": "onWindowChange",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  }
 }
